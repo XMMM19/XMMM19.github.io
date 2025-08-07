@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Турарбек & Айдана — Приглашение</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Montserrat&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --rich-black: #11151C;
+      --isabelline: #F4F3EE;
+      --rusty-red: #D62246;
+      --mint: #3AB795;
+      --lavender: #A379C9;
+    }
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--isabelline);
+      color: var(--rich-black);
+    }
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+    h1, h2 {
+      font-family: 'Playfair Display', serif;
+    }
+    .hero {
+      background-color: var(--rich-black);
+      color: var(--isabelline);
+    }
+    .hero a {
+      background-color: var(--rusty-red);
+      color: var(--isabelline);
+      padding: 15px 30px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 30px;
+    }
+    .invitation {
+      background-color: var(--isabelline);
+    }
+    .schedule {
+      background-color: var(--mint);
+      color: white;
+    }
+    .gallery {
+      background-color: var(--isabelline);
+    }
+    .location {
+      background-color: var(--lavender);
+      color: white;
+    }
+    .rsvp {
+      background-color: var(--rich-black);
+      color: var(--isabelline);
+    }
+    .rsvp input, .rsvp textarea, .rsvp button {
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+      width: 100%;
+      max-width: 500px;
+      box-sizing: border-box;
+    }
+    .rsvp button {
+      background-color: var(--mint);
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 32px;
+      }
+      h2 {
+        font-size: 24px;
+      }
+      .hero a {
+        padding: 12px 24px;
+        font-size: 16px;
+      }
+      section {
+        padding: 40px 15px;
+      }
+      iframe {
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <h1>Турарбек & Айдана</h1>
+    <p>03 сентября 2025</p>
+    <p>Мы приглашаем вас на самый важный день нашей жизни</p>
+    <a href="#invitation">Узнать больше</a>
+  </section>
+
+  <section id="invitation" class="invitation">
+    <h2>Приглашение</h2>
+    <p>Дорогие гости! Мы будем рады видеть вас на нашем торжестве, которое состоится 3 сентября 2025 года в городе Алматы.</p>
+  </section>
+
+  <section class="schedule">
+    <h2>Программа дня</h2>
+    <p>17:00 — Сбор гостей</p>
+    <p>17:30 — Церемония</p>
+    <p>18:30 — Банкет и веселье</p>
+  </section>
+
+  <section class="gallery">
+    <h2>Галерея</h2>
+    <p>Скоро здесь появятся наши лучшие моменты ❤️</p>
+  </section>
+
+  <section class="location">
+    <h2>Местоположение</h2>
+    <p>Адрес: Ресторан "Сказка", г. Алматы</p>
+    <iframe src="https://maps.google.com/maps?q=almaty&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="300" style="border:0;"></iframe>
+  </section>
+
+  <section class="rsvp">
+    <h2>RSVP</h2>
+    <form>
+      <input type="text" placeholder="Ваше имя" required>
+      <input type="email" placeholder="Ваш email" required>
+      <textarea placeholder="Сообщение (например, количество гостей)"></textarea>
+      <button type="submit">Подтвердить участие</button>
+    </form>
+  </section>
+</body>
+</html>
+

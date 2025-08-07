@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Тұрарбек & Айдана</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'KZBalmoral';
+      src: url('kzbalmoral_regular.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+    body {
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+      font-family: 'Pacifico', cursive;
+      background-color: #fffaf7;
+      color: #333;
+    }
+    header {
+      text-align: center;
+      padding-bottom: 1rem;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 0.3rem;
+    }
+    header p {
+      font-size: 1.1rem;
+    }
+    .section {
+      padding: 1.5rem 1rem;
+      max-width: 100%;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .calendar {
+      display: flex;
+      justify-content: center;
+      gap: 0.3rem;
+      font-size: 1rem;
+    }
+    .calendar .active {
+      color: white;
+      background: crimson;
+      padding: 0.4rem 0.7rem;
+      border-radius: 50%;
+    }
+    .schedule-item {
+      margin: 0.8rem 0;
+    }
+    .note, .location, .quote {
+      margin-top: 1.5rem;
+      font-style: italic;
+      font-size: 0.95rem;
+    }
+    a {
+      color: crimson;
+      text-decoration: none;
+    }
+    .footer {
+      text-align: center;
+      font-size: 0.8rem;
+      margin: 2rem 1rem 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div style="position: relative; width: 100%; height: 100vw; overflow: hidden; margin: 0 auto; display: flex; flex-direction: column; justify-content: flex-end;">
+      <img src="DSC09459.JPG" alt="Тұрарбек пен Айдананың фото" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+      <div style="position: absolute; bottom: 0; width: 100%; height: 150px; background: linear-gradient(to top, #fffaf7 0%, transparent 100%);"></div>
+    </div>
+    <h1 style="padding: 0 16px; font-family: 'KZBalmoral', cursive;; font-size: 3.8rem;">Тұрарбек & Айдана</h1>
+  </header>
+
+  <p class="section" style="padding: 0 16px; text-align: center;">Сіздерді осы ерекше күнде бізбен бірге болуға шақырамыз, біз "Иә" деп айтып, жүректерімізді және тағдырымызды бір-бірімізге арнаймыз.</p>
+
+  <div class="section">
+    <h2>Күні</h2>
+    <div class="calendar">
+      <span>14</span>
+      <span>15</span>
+      <span class="active">16</span>
+      <span>17</span>
+      <span>18</span>
+    </div>
+    <p><strong>Қазан айы</strong></p>
+  </div>
+
+  <div class="section">
+    <h2>Күн тәртібі</h2>
+    <div class="schedule-item">
+      🥂 Қонақтарды қарсы алу — <strong>12:00</strong>
+    </div>
+    <div class="schedule-item">
+      ⛪ Церемония — <strong>14:00</strong>
+    </div>
+    <div class="schedule-item">
+      🍰 Фуршет — <strong>18:00</strong>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Тілек</h2>
+    <p class="note">Гүлдің орнына бір бөтелке шарап — ең жақсы комплимент болады.</p>
+  </div>
+
+  <div class="section">
+    <h2>Өтетін орны</h2>
+    <p class="location">"Ауа" атты жайлы алаңда (Тула облысы, Высокое ауылы, 125)</p>
+    <a href="https://www.google.com/maps" target="_blank">Картада көру</a>
+  </div>
+
+  <div class="section">
+    <p class="quote">Махаббат — бұл екі жанның бірігуі. Ер мен әйел періштеге айналғанда, бұл — аспан!</p>
+  </div>
+
+  <div class="footer">
+    <p>© 2025 Тұрарбек & Айдана</p>
+  </div>
+</body>
+</html>
