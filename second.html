@@ -102,6 +102,37 @@
   </div>
 
   <div class="section">
+    <h2 style="font-family: 'KZPFMonumentaPro-Regular'; font-size: 1.5rem;">Үйлену тойына дейін қалған уақыт:</h2>
+    <div id="countdown" style="font-family: 'KZPFMonumentaPro-Regular'; font-size: 2rem; color: #b89e14;"></div>
+  </div>
+
+  <script>
+    // Set the date of the wedding
+    const weddingDate = new Date("2025-09-20T00:00:00").getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = weddingDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      const formatted = `${days} күн<br/>${hours} сағат<br/>${minutes} минут<br/>${seconds} секунд`;
+      document.getElementById("countdown").innerHTML = formatted;
+
+      if (distance < 0) {
+        document.getElementById("countdown").textContent = "Той басталды!";
+        clearInterval(timer);
+      }
+    }
+
+    updateCountdown(); // run immediately
+    const timer = setInterval(updateCountdown, 1000); // update every second
+  </script>
+
+  <div class="section">
     <h2>Күн тәртібі</h2>
     <div class="schedule-item">
       🥂 Қонақтарды қарсы алу — <strong>12:00</strong>
