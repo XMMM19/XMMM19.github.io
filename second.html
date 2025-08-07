@@ -101,35 +101,65 @@
     <h1 style="font-size: 1.3rem;font-family: 'KZPFMonumentaPro-Regular';color: #202924">үйлену тойына арналған салтанатты ақ дастарханымыздың қадірлі қонағы болуға шақырамыз!</h1>
   </div>
 
+  <div style="text-align: center;margin-top: 0px;margin-bottom: 0px;">
+    <img src="IMG_6254.PNG" alt="decorative line" style="max-width: 300px; width: 100%; height: auto;">
+  </div>
+
   <div class="section">
     <h2 style="font-family: 'KZPFMonumentaPro-Regular'; font-size: 1.5rem;">Үйлену тойына дейін қалған уақыт:</h2>
-    <div id="countdown" style="font-family: 'KZPFMonumentaPro-Regular'; font-size: 2rem; color: #b89e14;"></div>
+    <div id="countdown-container" style="display: flex; justify-content: center; gap: 0.2rem; margin-top: 1.5rem; flex-wrap: wrap;">
+      <div style="text-align: center;">
+        <div id="days" style="font-size: 3rem; font-family: 'KZPFMonumentaPro-Regular'; color: #b89e14;">00</div>
+        <div style="font-size: 1rem; font-family: 'KZPFMonumentaPro-Regular';">күн</div>
+      </div>
+      <div style="font-size: 3rem; font-family: 'KZPFMonumentaPro-Regular'; color: #b89e14;">:</div>
+      <div style="text-align: center;">
+        <div id="hours" style="font-size: 3rem; font-family: 'KZPFMonumentaPro-Regular'; color: #b89e14;">00</div>
+        <div style="font-size: 1rem; font-family: 'KZPFMonumentaPro-Regular';">сағат</div>
+      </div>
+      <div style="font-size: 3rem; font-family: 'KZPFMonumentaPro-Regular'; color: #b89e14;">:</div>
+      <div style="text-align: center;">
+        <div id="minutes" style="font-size: 3rem; font-family: 'KZPFMonumentaPro-Regular'; color: #b89e14;">00</div>
+        <div style="font-size: 1rem; font-family: 'KZPFMonumentaPro-Regular';">минут</div>
+      </div>
+      <div style="font-size: 3rem; font-family: 'KZPFMonumentaPro-Regular'; color: #b89e14;">:</div>
+      <div style="text-align: center;">
+        <div id="seconds" style="font-size: 3rem; font-family: 'KZPFMonumentaPro-Regular'; color: #b89e14;">00</div>
+        <div style="font-size: 1rem; font-family: 'KZPFMonumentaPro-Regular';">секунд</div>
+      </div>
+    </div>
   </div>
 
   <script>
-    // Set the date of the wedding
     const weddingDate = new Date("2025-09-20T00:00:00").getTime();
+
+    function pad(num) {
+      return String(num).padStart(2, '0');
+    }
 
     function updateCountdown() {
       const now = new Date().getTime();
       const distance = weddingDate - now;
+
+      if (distance < 0) {
+        document.getElementById("countdown-container").innerHTML = '<div style="font-size: 2rem; font-family: KZPFMonumentaPro-Regular; color: #b89e14;">Той басталды!</div>';
+        clearInterval(timer);
+        return;
+      }
 
       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
       const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-      const formatted = `${days} күн<br/>${hours} сағат<br/>${minutes} минут<br/>${seconds} секунд`;
-      document.getElementById("countdown").innerHTML = formatted;
-
-      if (distance < 0) {
-        document.getElementById("countdown").textContent = "Той басталды!";
-        clearInterval(timer);
-      }
+      document.getElementById("days").textContent = pad(days);
+      document.getElementById("hours").textContent = pad(hours);
+      document.getElementById("minutes").textContent = pad(minutes);
+      document.getElementById("seconds").textContent = pad(seconds);
     }
 
-    updateCountdown(); // run immediately
-    const timer = setInterval(updateCountdown, 1000); // update every second
+    updateCountdown();
+    const timer = setInterval(updateCountdown, 1000);
   </script>
 
   <div class="section">
