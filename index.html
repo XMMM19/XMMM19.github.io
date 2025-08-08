@@ -25,6 +25,18 @@
       font-weight: normal;
       font-style: normal;
     }
+    :root {
+      color-scheme: light;
+    }
+    .swal-title {
+      font-family: 'KZPFMonumentaPro-Regular', sans-serif;
+    }
+    .swal-text {
+      font-family: 'KZPFMonumentaPro-Regular', sans-serif;
+    }
+    .swal-button {
+      font-family: 'KZPFMonumentaPro-Regular', sans-serif;
+    }
     body {
       overflow-x: hidden;
       margin: 0;
@@ -404,14 +416,24 @@
               confirmButtonText: 'Жабу',
               confirmButtonColor: '#b89e14',
               timer: 4000,
-              timerProgressBar: true
+              timerProgressBar: true,
+              customClass: {
+                  title: 'swal-title',
+                  htmlContainer: 'swal-text',
+                  confirmButton: 'swal-button'
+                }
           });
       }).catch(() => {
           Swal.fire({
               icon: 'error',
               title: 'Қате',
               text: 'Кейінірек көріңіз.',
-              confirmButtonText: 'Жабу'
+              confirmButtonText: 'Жабу',
+              customClass: {
+                  title: 'swal-title',
+                  htmlContainer: 'swal-text',
+                  confirmButton: 'swal-button'
+                }
           });
       });
   });
