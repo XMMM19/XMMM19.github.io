@@ -281,31 +281,40 @@
 <!--   <div class="section" style="margin-top: 2rem;">
     <h2 style="font-family: 'KZPFMonumentaPro-Regular'; font-size: 1.3rem; color: #202924; margin-bottom: 1rem;">
       Тойға қатысуыңызды растауыңызды сұраймыз!
-    </h2>
-    <form style="max-width: 400px; margin: 0 auto; text-align: left;">
-      <input type="text" name="fullname" placeholder="Аты-жөніңіз" required
+    </h2> -->
+  
+    <!-- Отправка напрямую в Google Form -->
+<!--     <form action="https://docs.google.com/forms/d/e/1FAIpQLSdcwmBn-547z9cxLt65ReltBPn2Zi3zbxOcnGg9r5XjFjsx0w/formResponse"
+          method="POST" target="_blank"
+          style="max-width: 400px; margin: 0 auto; text-align: left;"> -->
+  
+      <!-- Имя -->
+<!--       <input type="text" name="entry.216256817" placeholder="Аты-жөніңіз" required
             style="width: 100%; padding: 0.8rem; font-family: 'KZPFMonumentaPro-Regular'; font-size: 1rem; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; margin-bottom: 1.5rem;">
-
-      <p style="font-family: 'KZPFMonumentaPro-Regular'; font-size: 1rem; color: #202924; margin-bottom: 1rem;">
+   -->
+      <!-- Вопрос -->
+<!--       <p style="font-family: 'KZPFMonumentaPro-Regular'; font-size: 1rem; color: #202924; margin-bottom: 1rem;">
         Тойға келе аласыз ба?
       </p>
-
+  
       <label style="display: flex; align-items: center; font-family: 'KZPFMonumentaPro-Regular'; font-size: 1rem; margin-bottom: 0.8rem; color: #202924;">
-        <input type="radio" name="attendance" value="solo" required style="margin-right: 0.6rem;">
+        <input type="radio" name="entry.2128161159" value="иә, жалғыз барамын" required style="margin-right: 0.6rem;">
         иә, жалғыз барамын
       </label>
-
+  
       <label style="display: flex; align-items: center; font-family: 'KZPFMonumentaPro-Regular'; font-size: 1rem; margin-bottom: 0.8rem; color: #202924;">
-        <input type="radio" name="attendance" value="with_spouse" required style="margin-right: 0.6rem;">
+        <input type="radio" name="entry.2128161159" value="иә, жұбайыммен барамын" required style="margin-right: 0.6rem;">
         иә, жұбайыммен барамын
       </label>
-
+  
       <label style="display: flex; align-items: center; font-family: 'KZPFMonumentaPro-Regular'; font-size: 1rem; margin-bottom: 1.5rem; color: #202924;">
-        <input type="radio" name="attendance" value="no" required style="margin-right: 0.6rem;">
+        <input type="radio" name="entry.2128161159" value="жоқ, өкінішке орай келе алмаймын" required style="margin-right: 0.6rem;">
         жоқ, өкінішке орай келе алмаймын
-      </label>
-
-      <button type="submit" style="width: 100%; background-color: #b89e14; color: white; font-family: 'KZPFMonumentaPro-Regular'; font-size: 1.1rem; padding: 0.8rem; border: none; border-radius: 8px; cursor: pointer;">
+      </label> -->
+  
+      <!-- Кнопка -->
+<!--       <button type="submit"
+              style="width: 100%; background-color: #b89e14; color: white; font-family: 'KZPFMonumentaPro-Regular'; font-size: 1.1rem; padding: 0.8rem; border: none; border-radius: 8px; cursor: pointer;">
         Жіберу
       </button>
     </form>
@@ -316,11 +325,7 @@
       Тойға қатысуыңызды растауыңызды сұраймыз!
     </h2>
   
-    <!-- Отправка напрямую в Google Form -->
-    <form action="https://docs.google.com/forms/d/e/1FAIpQLSdcwmBn-547z9cxLt65ReltBPn2Zi3zbxOcnGg9r5XjFjsx0w/formResponse"
-          method="POST" target="_blank"
-          style="max-width: 400px; margin: 0 auto; text-align: left;">
-  
+    <form id="weddingForm" style="max-width: 400px; margin: 0 auto; text-align: left;">
       <!-- Имя -->
       <input type="text" name="entry.216256817" placeholder="Аты-жөніңіз" required
             style="width: 100%; padding: 0.8rem; font-family: 'KZPFMonumentaPro-Regular'; font-size: 1rem; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; margin-bottom: 1.5rem;">
@@ -351,7 +356,33 @@
         Жіберу
       </button>
     </form>
+  
+    <!-- Сообщение об успехе -->
+    <div id="successMessage" style="display:none; text-align:center; margin-top:1.5rem; font-family:'KZPFMonumentaPro-Regular'; font-size:1.2rem; color:green;">
+      Рахмет! Жауабыңыз қабылданды ✅
+    </div>
   </div>
+  
+  <script>
+  document.getElementById("weddingForm").addEventListener("submit", function(e) {
+      e.preventDefault(); // отменяем стандартную отправку
+  
+      const form = e.target;
+      const formData = new FormData(form);
+  
+      fetch("https://docs.google.com/forms/d/e/1FAIpQLSdcwmBn-547z9cxLt65ReltBPn2Zi3zbxOcnGg9r5XjFjsx0w/formResponse", {
+          method: "POST",
+          body: formData,
+          mode: "no-cors"
+      }).then(() => {
+          form.reset(); // очищаем форму
+          document.getElementById("successMessage").style.display = "block"; // показываем сообщение
+      }).catch(() => {
+          alert("Қате кетті. Кейінірек көріңіз.");
+      });
+  });
+  </script>
+
 
 
   <div style="position: relative; width: 100%; height: 100vw; overflow: hidden; margin: 0 auto; display: flex; flex-direction: column; justify-content: flex-start; margin-top: 3rem;">
