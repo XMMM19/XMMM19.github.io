@@ -91,6 +91,40 @@
       font-size: 0.8rem;
       margin: 2rem 1rem 1rem;
     }
+
+    @keyframes slideInFromLeft {
+      0% {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInFromRight {
+      0% {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    .names-container span {
+      display: inline-block;
+    }
+
+    .name-left {
+      animation: slideInFromLeft 1.5s ease-out forwards;
+    }
+
+    .name-right {
+      animation: slideInFromRight 1.5s ease-out forwards;
+    }
   </style>
 </head>
 <body>
@@ -99,7 +133,11 @@
       <img src="images/startImage.JPG" alt="Тұрарбек пен Айдананың фото" style="width: 100%; height: 100%; object-fit: cover; display: block;">
       <div style="position: absolute;bottom: 0;width: 100%;height: 220px;background: linear-gradient(to top, #fffaf7 0%, transparent 100%);"></div>
     </div>
-    <p style="padding: 0 16px;font-family: 'KZ Decor';font-size: 3rem;color: #202924;margin-top: 0px;margin-bottom: 0px;">Тұрарбек &amp; Айдана</p>
+    <p class="names-container" style="padding: 0 16px;font-family: 'KZ Decor';font-size: 3rem;color: #202924;margin-top: 0px;margin-bottom: 0px;">
+      <span class="name-left">Тұрарбек</span>
+      <span class="ampersand">&amp;</span>
+      <span class="name-right">Айдана</span>
+    </p>
   </header>
 
   <audio id="bg-music" loop>
