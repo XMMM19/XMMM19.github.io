@@ -46,6 +46,14 @@
   <meta name="twitter:description" content="Тұрарбек пен Айдананың үйлену тойы">
   <meta name="twitter:image" content="https://xmmm.kz/images/startImageForMS.jpeg?v=4">
 
+  <!-- Всегда светлая тема для всех движков -->
+  <meta name="color-scheme" content="light">
+  <meta name="supported-color-schemes" content="light"><!-- для iOS Safari -->
+  <meta name="theme-color" content="#fffaf7"><!-- цвет адресной строки/хрома -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+
   <link rel="canonical" href="https://xmmm.kz/">
 
 
@@ -73,6 +81,24 @@
     :root {
       color-scheme: light;
     }
+    html, body {
+      background-color: #fffaf7 !important;
+      color: #202924 !important;
+    }
+
+    /* Если у пользователя системный тёмный режим — всё равно держим светлую палитру */
+    @media (prefers-color-scheme: dark) {
+      html, body {
+        background-color: #fffaf7 !important;
+        color: #202924 !important;
+      }
+      /* На всякий случай отключаем инверсию/блендинг медиа у авто-дарка некоторых вебвью */
+      img, svg, video {
+        filter: none !important;
+        mix-blend-mode: normal !important;
+      }
+    }
+
     .swal-title {
       font-family: 'KZPFMonumentaPro-Regular', sans-serif;
     }
